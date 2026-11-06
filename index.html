@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convene – Discover and join campus events</title>
+<meta name="description" content="Browse upcoming events, filter by category and register in seconds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a href="#top" class="logo">Convene</a>
+  <nav>
+    <a href="#events">Events</a>
+    <a href="#my-registrations">My registrations</a>
+    <button id="themeToggle" class="icon-btn" aria-label="Switch colour theme">◐</button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div>
+      <h1>Your next great event starts here.</h1>
+      <p>Workshops, hackathons, concerts and talks, all in one place. Find one, register in under a minute.</p>
+      <a class="btn" href="#events">Browse events</a>
+    </div>
+    <aside class="next" aria-live="polite">
+      <p class="muted">Happening next</p>
+      <h2 id="nextTitle"></h2>
+      <div class="clock" id="nextClock"></div>
+      <button class="btn ghost" id="nextBtn">View details</button>
+    </aside>
+  </section>
+
+  <section id="events" class="wrap">
+    <h2>Upcoming events</h2>
+    <div class="tools">
+      <input id="search" type="search" placeholder="Search by name, venue or keyword" aria-label="Search events">
+      <div id="chips" class="chips" role="group" aria-label="Filter by category"></div>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No events match your search. Clear the filter or try another keyword.</p>
+  </section>
+
+  <section id="my-registrations" class="wrap">
+    <h2>My registrations</h2>
+    <ul id="regList" class="reg-list"></ul>
+  </section>
+</main>
+
+<footer>Built with HTML, CSS and JavaScript · Convene</footer>
+
+<dialog id="modal">
+  <button class="close icon-btn" id="closeModal" aria-label="Close">✕</button>
+  <div id="detail"></div>
+  <form id="form" novalidate>
+    <h3>Register for this event</h3>
+    <label>Full name<input name="name" autocomplete="name" required><small class="err"></small></label>
+    <label>Email address<input name="email" type="email" autocomplete="email" required><small class="err"></small></label>
+    <label>Phone number<input name="phone" type="tel" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number" required><small class="err"></small></label>
+    <label>Selected event<select name="event" required></select><small class="err"></small></label>
+    <button class="btn" type="submit">Confirm registration</button>
+  </form>
+  <div id="confirm" class="confirm" hidden></div>
+</dialog>
+<script src="script.js"></script>
+</body>
+</html>

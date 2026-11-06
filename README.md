@@ -2,7 +2,7 @@
 
 A responsive website to explore upcoming events, view details and register. Built with plain HTML5, CSS3 and JavaScript (no frameworks).
 
-**Live site:** _add your Vercel / Netlify / GitHub Pages link_
+**Live site:** https://aryan2006king.github.io/convene-event-website/
 
 ## Features
 - Hero section with a live countdown to the next event
